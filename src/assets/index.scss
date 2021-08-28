@@ -1,0 +1,204 @@
+.main-container {
+  background-color: #f3f1f5;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  .progress-container {
+    width: 80%;
+    padding: 50px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    .progress {
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      .node {
+        margin: 0 4px !important;
+        position: relative;
+        z-index: 5;
+        width: 40px;
+        height: 40px;
+        padding: 3px;
+        border-radius: 50%;
+        color: #555555;
+        font-size: 16px;
+        font-weight: bold;
+        background-color: #b6c9f0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: all 0.4s;
+        &::before {
+          content: "";
+          position: absolute;
+          z-index: 4;
+          left: 50%;
+          top: 50%;
+          transform: translate(-50%, -50%);
+          width: 50px;
+          height: 50px;
+          background-color: transparent;
+          border: 2px solid #b6c9f0;
+          border-radius: 50%;
+        }
+        &::after {
+          content: "✓";
+          opacity: 0;
+          visibility: hidden;
+          font-size: 24px;
+          font-weight: bold;
+          color: #fff;
+          position: absolute;
+          z-index: 4;
+          left: 50%;
+          top: 50%;
+          backface-visibility: hidden;
+        }
+        &-circle {
+        }
+        &-content {
+          color: #555555;
+          font-weight: normal;
+          position: absolute;
+          bottom: -100%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+        }
+        &-tooltip {
+          position: absolute;
+          width: 7rem;
+          border-radius: 15px;
+          height: 2rem;
+          padding: 5px 7px;
+          opacity: 0;
+          visibility: visible;
+          left: 50%;
+          transform: translateY(30px) translateX(-50%);
+          background-color: #7579e7;
+          transition: all 0.4s;
+        }
+      }
+      .node:hover {
+        .node-tooltip {
+          opacity: 1;
+          visibility: visible;
+          transform: translateY(0) translateX(-50%) !important;
+          &::after {
+            width: 10px;
+            height: 10px;
+            position: absolute;
+            bottom: -5px;
+            left: 50%;
+            transform: rotate(45deg) translateX(-50%);
+          }
+        }
+      }
+      .node.active {
+        z-index: 5;
+        color: #555555;
+        background-color: #e93b81;
+        .node-content {
+          transition: color 0.4s, font-weight 0.4s;
+          color: #e93b81;
+          font-weight: bold;
+        }
+        &::before {
+          content: "";
+          position: absolute;
+          z-index: 4;
+          left: 50%;
+          top: 50%;
+          transform: translate(-50%, -50%);
+          width: 50px;
+          height: 50px;
+          background-color: transparent;
+          border: 2px solid #e93b81;
+          border-radius: 50%;
+        }
+      }
+      .node.checked {
+        z-index: 5;
+        color: #555555;
+        background-color: #61b15a;
+        &::before {
+          content: "";
+          position: absolute;
+          z-index: 4;
+          left: 50%;
+          top: 50%;
+          transform: translate(-50%, -50%);
+          width: 50px;
+          height: 50px;
+          background-color: transparent;
+          border: 2px solid #61b15a;
+          border-radius: 50%;
+        }
+        &::after {
+          animation: fade-up 0.4s ease forwards;
+        }
+      }
+    }
+    .progress-bar {
+      position: relative;
+      z-index: 1;
+      height: 1px;
+      background-color: transparent;
+      width: 5rem;
+      border-top: 3px dashed #bbbbbb;
+      &::after {
+        z-index: 2;
+        position: absolute;
+        content: "";
+        left: 0;
+        top: -3px;
+        height: 1px;
+        width: 0;
+        border-top: 3px solid #61b15a;
+        transition: all 0.4s;
+      }
+    }
+    .progress-bar.checked {
+      &::after {
+        width: 5rem;
+      }
+    }
+  }
+  .operations {
+    width: 20%;
+    margin: 5rem auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    button {
+      cursor: pointer;
+      border: none;
+      outline: none;
+      border-radius: 5px;
+      background-color: #7579e7;
+      padding: 5px 8px;
+      color: #fff;
+      font-weight: bold;
+    }
+  }
+}
+
+@keyframes fade-up {
+  0% {
+    opacity: 0;
+    visibility: hidden;
+    transform: translate(-50%, -50%) scale(0);
+  }
+  50% {
+    opacity: 0.5;
+    visibility: visible;
+    transform: translate(-50%, -50%) scale(1.3);
+  }
+  100% {
+    opacity: 1;
+    visibility: visible;
+    transform: translate(-50%, -50%) scale(1);
+  }
+}
