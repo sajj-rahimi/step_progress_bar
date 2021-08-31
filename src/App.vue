@@ -1,5 +1,5 @@
 <template>
-  <HelloWorld />
+  <HelloWorld ref="progress" />
 </template>
 
 <script>
@@ -9,6 +9,12 @@ export default {
   name: 'App',
   components: {
     HelloWorld
+  },
+  created(){
+    setTimeout(() => {
+       this.$refs.progress.next()
+    }, 20);
+   
   }
 }
 </script>
