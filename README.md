@@ -10,7 +10,7 @@ npm install vue-step-progress-bar
 
 import the component and pass the options
 
-```javascipt
+```vue
 <template>
     <step-progress-bar :options="options" ref="progress" />
 </tepmlate>
@@ -82,4 +82,4 @@ methods: {
 
 ### That's it :)
 
-![alt text](https://github.com/sajj-rahimi/step_progress_bar/tree/develop/step-progress-bar.png?raw=true)
+![alt text](https://github.com/sajj-rahimi/step_progress_bar/blob/develop/step-progress-bar.png?raw=true)
