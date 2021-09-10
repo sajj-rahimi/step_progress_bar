@@ -1,29 +1,5 @@
 <template>
-<div class="main-container">
   <step-progress-bar :options="options" ref="progress" />
-  <div class="operations">
-        <div class="button-container">
-          <button class="next" @click="next()">next</button>
-          <button class="prev" @click="prev()">prev</button>
-          <button class="restart" @click="restart()">restart</button>
-        </div>
-        <div class="input-container">
-          <div class="input-group">
-            <label for="barHeight-input">bar height :</label>
-            <input type="number" v-model="options.barHeight" name="" id="barHeight-input">
-          </div>
-          <div class="input-group">
-            <label for="node-width-input">node width :</label>
-            <input type="number" v-model="options.nodeWidth" name="" id="node-width-input">
-          </div>
-          <div class="input-group">
-            <label for="nodeHeight-input">node height :</label>
-            <input type="number" v-model="options.nodeHeight" name="" id="nodeHeight-input">
-          </div>
-        </div>
-  </div>
-</div>
-  
 </template>
 
 <script>
@@ -48,38 +24,24 @@ export default {
           onFinish:this.onFinish,
           nodes:[
               {
-                content:'salam salam salamsalam salam salam ',
-                tooltip:'salam slam salam salam salam salam salam salam'
+                content:'step 1',
+                tooltip:'sth about step 1'
               },
               {
-                content:'salam',
-                tooltip:'chetori?'
+                content:'step 2',
+                tooltip:'sth about step 2'
               },
               {
-                content:'salam',
-                tooltip:'chetori?'
+                content:'step 3',
+                tooltip:'sth about step 3'
               },
               {
-                content:'salam',
-                tooltip:'chetori?'
-              },
-              {
-                content:'salam',
-                tooltip:'chetori?'
-              },
-              {
-                content:'salam',
-                tooltip:'chetori?'
+                content:'step 4',
+                tooltip:'sth about step 4'
               }
             ]
       }
     }
-  },
-  created(){
-    // setTimeout(() => {
-    //    this.$refs.progress.next()
-    // }, 20);
-   
   },
   methods:{
     onNext(){
