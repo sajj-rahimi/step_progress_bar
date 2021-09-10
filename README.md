@@ -1,5 +1,7 @@
 # vue-step-progress-bar
 
+![vue step progress bar](https://github.com/sajj-rahimi/step_progress_bar/blob/develop/step-progress-bar.png?raw=true)
+
 ## Install the plugin with npm:
 
 ```
@@ -19,26 +21,29 @@ import the component and pass the options
 import StepProgressBar from 'vue-step-progress-bar'
 
 export default {
+  components: {
+        StepProgressBar
+  },
   data () {
     return {
       options: {
-          maxWidth:'100%',
-          nodeWidth:40,
-          nodeHeight:40,
-          barHeight:3,
-          showTooltip:true,
-          showContent:true,
+          maxWidth: '100%',
+          nodeWidth: 40,
+          nodeHeight: 40,
+          barHeight: 3,
+          showTooltip: true,
+          showContent: true,
 
-          #barType can be dashed or solid
-          barType:'dashed',
+          // barType can be dashed or solid
+          barType: 'dashed',
 
-          #expects a function
-          onNext:this.onNext,
+          // expects a function
+          onNext: this.onNext,
 
-          #expects a function
-          onFinish:this.onFinish,
+          // expects a function
+          onFinish: this.onFinish,
 
-          nodes:[
+          nodes: [
               {
                 content:'step 1',
                 tooltip:'sth about step 1'
@@ -81,5 +86,3 @@ methods: {
 ```
 
 ### That's it :)
-
-![alt text](https://github.com/sajj-rahimi/step_progress_bar/blob/develop/step-progress-bar.png?raw=true)
