@@ -27,49 +27,37 @@ import '@/assets/index.scss'
 export default {
   name: 'StepProgressBar',
   props:{
-    options:{type:Object, default:function(){
+    options:{
+      type:Object, default:function(){
           return {
-            maxWidth:'100%',
-            nodeWidth:40,
-            nodeHeight:40,
-            barHeight:3,
-            showTooltip:true,
-            showContent:true,
-            barType:'dashed',
-            nodes:[
-                {
-                  content:'salam salam salamsalam salam salam ',
-                  tooltip:'salam slam salam salam salam salam salam salam'
-                },
-                {
-                  content:'salam',
-                  tooltip:'chetori?'
-                },
-                {
-                  content:'salam',
-                  tooltip:'chetori?'
-                },
-                {
-                  content:'salam',
-                  tooltip:'chetori?'
-                },
-                {
-                  content:'salam',
-                  tooltip:'chetori?'
-                },
-                {
-                  content:'salam',
-                  tooltip:'chetori?'
-                }
-              ]
-          }
+          maxWidth:'100%',
+          nodeWidth:40,
+          nodeHeight:40,
+          barHeight:3,
+          showTooltip:true,
+          showContent:true,
+          barType:'dashed',
+          nodes:[
+              {
+                content:'step 1',
+                tooltip:'sth about step 1'
+              },
+              {
+                content:'step 2',
+                tooltip:'sth about step 2'
+              },
+              {
+                content:'step 3',
+                tooltip:'sth about step 3'
+              },
+              {
+                content:'step 4',
+                tooltip:'sth about step 4'
+              }
+            ]
+      }
         }
      }
-  },
-  data(){
-    return{
-    
-    }
   },
   created(){
     setTimeout(this.handleHover , 20)
