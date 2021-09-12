@@ -73,13 +73,13 @@ call component methods using ref
 ```javascript
 methods: {
     someDummyFunction() {
-        #goes to the next step
+        // goes to the next step
         this.$refs.progress.next()
 
-        #goes to the previous step
+        // goes to the previous step
         this.$refs.progress.prev()
 
-        #restarts the step progress bar
+        // restarts the step progress bar
         this.$refs.progress.restart()
     }
 }

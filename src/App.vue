@@ -1,14 +1,14 @@
 <template>
-  <step-progress-bar :options="options" ref="progress" />
+  <steps-progress-bar :options="options" ref="progress" />
 </template>
 
 <script>
-import StepProgressBar from './components/StepProgressBar.vue'
+import StepsProgressBar from './components/StepsProgressBar.vue'
 
 export default {
   name: 'App',
   components: {
-    StepProgressBar
+    StepsProgressBar
   }
 }
 </script>

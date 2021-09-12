@@ -23,9 +23,8 @@
 </template>
 
 <script>
-import '@/assets/index.scss'
 export default {
-  name: 'StepProgressBar',
+  name: 'StepsProgressBar',
   props:{
     options:{
       type:Object, default:function(){
